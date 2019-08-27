@@ -18,6 +18,8 @@ namespace FoodDiary.DAL.Entities
         [Required]
         public string LastName { get; set; }
         [Required]
+        public bool Gender { get; set; }
+        [Required]
         public int Age { get; set; }
         [Required]
         public float Height { get; set; }
@@ -28,7 +30,22 @@ namespace FoodDiary.DAL.Entities
         [Required]
         public string Password { get; set; }
         [Required]
-        public float CountOfCalories { get; set; }
-
+        public float RecommentedCountOfCalories { get; set; }
+        //the amount of proteins, fats and carbohydrates is measured in grams
+        [Required]
+        public float RecommentedCountOfProteins { get; set; }
+        [Required]
+        public float RecommentedCountOfFats { get; set; }
+        [Required]
+        public float RecommentedCountOfCarbohydrates { get; set; }
+        [Required]
+        public float AtedProteins { get; set; }
+        [Required]
+        public float AtedFats { get; set; }
+        [Required]
+        public float AtedCarbohydrates { get; set; }
+        [Required]
+        public float AtedCalories { get; set; }
+        public virtual ICollection<Day> Days { get; set; }
     }
 }
