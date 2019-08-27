@@ -15,6 +15,7 @@ namespace FoodDiary.DAL.Entities
         public int UserId { get; set; }
         [Key, Column(Order = 1)]
         public DateTime Date { get; set; }
+        public virtual User UserOf { get; set; }
         public virtual ICollection<AtedProduct> AtedProducts { get; set; }
     }
 }
