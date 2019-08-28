@@ -41,16 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IProductService.cs" />
+    <Compile Include="Abstract\IUserService.cs" />
+    <Compile Include="Concrate\ProductService.cs" />
+    <Compile Include="Concrate\UserService.cs" />
     <Compile Include="Models\AtedProductDTO.cs" />
     <Compile Include="Models\DayDTO.cs" />
     <Compile Include="Models\ProductDTO.cs" />
     <Compile Include="Models\UserDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Abstract\" />
-    <Folder Include="Concrate\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\FoodDiary.DAL\FoodDiary.DAL.csproj">
       <Project>{9E2C8DEC-D339-4334-B9D5-54BCC97E722B}</Project>

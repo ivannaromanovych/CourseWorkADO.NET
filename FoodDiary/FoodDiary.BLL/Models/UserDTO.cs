@@ -28,6 +28,5 @@ namespace FoodDiary.BLL.Models
         public float AtedCarbohydrates { get; set; }
         public float AtedCalories { get; set; }
         public List<Day> Days { get; set; }
-
     }
 }
