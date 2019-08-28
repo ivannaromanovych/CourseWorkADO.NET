@@ -14,7 +14,7 @@ namespace FoodDiary.DAL.Entities
         [Key]
         public int Id { get; set; }
         [Required]
-        public int Name { get; set; }
+        public string Name { get; set; }
         //the amount of proteins, fats and carbohydrates is measured in grams
         [Required]
         public float ProteinsIn100g { get; set; }

@@ -13,10 +13,10 @@ namespace FoodDiary.DAL.Entities
     {
         [Key]
         public int Id { get; set; }
-
-        [Required, ForeignKey("DayOf")]
+        [Required, ForeignKey("DayOf"), Column(Order = 1)]
         public int DayId { get; set; }
-
+        [Required, ForeignKey("DayOf"), Column(Order = 2)]
+        public DateTime DayDate { get; set; }
         [Required, ForeignKey("ProductOf")]
         public int ProductId { get; set; }
         [Required]
@@ -32,6 +32,5 @@ namespace FoodDiary.DAL.Entities
         public float AtedCalories { get; set; }
         public virtual Product ProductOf { get; set; }
         public virtual Day DayOf { get; set; }
-        //ToDo: connection with products and days
     }
 }
