@@ -53,6 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Concrate\ProductRepository.cs" />
+    <Compile Include="Concrate\UserRepository.cs" />
     <Compile Include="Entities\AtedProduct.cs" />
     <Compile Include="Entities\Day.cs" />
     <Compile Include="Entities\EFContext.cs" />
@@ -73,10 +76,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Abstract\" />
-    <Folder Include="Concrate\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201908281517485_First.resx">
       <DependentUpon>201908281517485_First.cs</DependentUpon>
