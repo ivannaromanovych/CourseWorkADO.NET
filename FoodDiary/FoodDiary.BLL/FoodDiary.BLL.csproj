@@ -41,12 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AtedProductDTO.cs" />
+    <Compile Include="Models\DayDTO.cs" />
+    <Compile Include="Models\ProductDTO.cs" />
+    <Compile Include="Models\UserDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Abstract\" />
     <Folder Include="Concrate\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FoodDiary.DAL\FoodDiary.DAL.csproj">
+      <Project>{9E2C8DEC-D339-4334-B9D5-54BCC97E722B}</Project>
+      <Name>FoodDiary.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
