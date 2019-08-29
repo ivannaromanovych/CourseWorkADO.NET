@@ -51,7 +51,6 @@
     <Compile Include="Models\UserDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\FoodDiary.DAL\FoodDiary.DAL.csproj">
       <Project>{9E2C8DEC-D339-4334-B9D5-54BCC97E722B}</Project>
