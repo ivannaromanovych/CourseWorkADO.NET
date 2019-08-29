@@ -11,6 +11,6 @@ namespace FoodDiary.BLL.Models
     {
         public int UserId { get; set; }
         public DateTime Date { get; set; }
-        public List<AtedProduct> AtedProducts { get; set; }
+        public List<AtedProductDTO> AtedProducts { get; set; }
     }
 }

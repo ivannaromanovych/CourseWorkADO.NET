@@ -36,7 +36,22 @@ namespace FoodDiary.BLL.Concrate
                 AtedCalories = t.AtedCalories,
                 AtedProteins = t.AtedProteins,
                 AtedFats = t.AtedFats,
-                AtedCarbohydrates = t.AtedCarbohydrates
+                AtedCarbohydrates = t.AtedCarbohydrates,
+                Days = t.Days.Select(d => new DayDTO()
+                {
+                    UserId = d.UserId,
+                    Date = d.Date,
+                    AtedProducts = d.AtedProducts.Select(a => new AtedProductDTO()
+                    {
+                        Id = a.Id,
+                        ProductId = a.ProductId,
+                        Weight = a.Weight,
+                        AtedCalories = a.AtedCalories,
+                        AtedProteins = a.AtedProteins,
+                        AtedFats = a.AtedFats,
+                        AtedCarbohydrates = a.AtedCarbohydrates
+                    }).ToList()
+                }).ToList(),
             }).ToList();
         }
     }
