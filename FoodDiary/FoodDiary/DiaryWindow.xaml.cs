@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FoodDiary.BLL.Models;
+using FoodDiary.DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,11 @@ namespace FoodDiary
     /// </summary>
     public partial class DiaryWindow : Window
     {
-        public DiaryWindow()
+        private UserDTO user;
+        public DiaryWindow(UserDTO user)
         {
             InitializeComponent();
+            this.user = user;
         }
     }
 }

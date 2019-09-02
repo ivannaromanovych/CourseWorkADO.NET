@@ -5,28 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FoodDiary"
         mc:Ignorable="d"
-        Title="SignUpWindow" Height="323" Width="330" FontFamily="Segoe Print" FontSize="12">
+        Title="SignUpWindow" Height="392" Width="302" FontFamily="Segoe Print" FontSize="12">
     <Grid>
+        <Label FontSize="14" FontWeight="SemiBold" Content="Please Sign Up" HorizontalAlignment="Center" Height="34" Margin="0,0,0,0" VerticalAlignment="Top" Width="115"/>
 
-        <RadioButton x:Name="rbGenderMale" Content="Male" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="88,8,0,0"/>
-        <RadioButton x:Name="rbGenderFemale" Content="Female" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="144,9,0,0"/>
+        <Label Name="lbFirstName" Content="First Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,39,0,0" />
+        <TextBox x:Name="tbFirstName" HorizontalAlignment="Left" Height="30" Margin="139,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
 
-        <Label Content="Weight" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="101,37,0,0"/>
-        <TextBox x:Name="tboxWeight" HorizontalAlignment="Left" Height="30" Margin="160,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" ToolTip="Must be positiv number"/>
-        <Label Content="kg" HorizontalAlignment="Left" Height="35" Margin="195,38,0,0" VerticalAlignment="Top" Width="28"/>
+        <Label Name="lbLastName" Content="Last Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,71,0,0"/>
+        <TextBox x:Name="tbLastName" HorizontalAlignment="Left" Height="30" Margin="139,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
 
-        <Label Content="Height" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="42,85,0,0"/>
-        <TextBox x:Name="tboxHeight" HorizontalAlignment="Left" Height="30" Margin="98,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" ToolTip="Must be positiv number"/>
-        <Label Content="cm" HorizontalAlignment="Left" Height="35" Margin="133,86,0,0" VerticalAlignment="Top" Width="30"/>
+        <Label Name="lbGender" Content="Gender: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,101,0,0"/>
+        <RadioButton x:Name="rbGenderMale" Content="Male" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="141,106,0,0"/>
+        <RadioButton x:Name="rbGenderFemale" Content="Female" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="196,106,0,0"/>
 
-        <Label Content="Age" HorizontalAlignment="Left" Height="35" Margin="120,126,0,0" VerticalAlignment="Top" Width="39"/>
-        <TextBox x:Name="tboxAge" HorizontalAlignment="Left" Height="30" Margin="159,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" ToolTip="Must be positiv number"/>
+        <Label Name="lbWeight" Content="Weight" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,134,0,0"/>
+        <TextBox x:Name="tbWeight" HorizontalAlignment="Left" Height="30" Margin="139,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" ToolTip="Must be positiv number"/>
+        <Label Content="kg" HorizontalAlignment="Left" Height="35" Margin="257,145,0,0" VerticalAlignment="Top" Width="28"/>
 
-        <Label Content="Name" Margin="68,181,199,112"/>
-        <TextBox x:Name="tboxName" HorizontalAlignment="Left" Height="30" Margin="128,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+        <Label Name="Height" Content="Height" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,170,0,0"/>
+        <TextBox x:Name="tbHeight" HorizontalAlignment="Left" Height="30" Margin="139,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" ToolTip="Must be positiv number"/>
+        <Label Content="cm" HorizontalAlignment="Left" Height="35" Margin="257,180,0,0" VerticalAlignment="Top" Width="30"/>
 
-        <Button x:Name="butSave" Content="Save" HorizontalAlignment="Left" Margin="133,247,0,0" VerticalAlignment="Top" Click="butSaveClick"/>
-        <Label Content="Name" Margin="73,172,194,84"/>
+        <Label Name="lbAge" Content="Age" HorizontalAlignment="Left" Height="35" Margin="11,206,0,0" VerticalAlignment="Top" Width="39"/>
+        <TextBox x:Name="tbAge" HorizontalAlignment="Left" Height="30" Margin="139,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" ToolTip="Must be positiv number"/>
 
+
+        <Label Name="lbLogin" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,240,0,0"/>
+        <TextBox x:Name="tbLogin" HorizontalAlignment="Left" Height="30" Margin="139,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
+
+        <Label Name="lbPassword" Content="Password" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,275,0,0"/>
+        <TextBox x:Name="tbPassword" HorizontalAlignment="Left" Height="30" Margin="139,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
+
+        <Button x:Name="butSave" Content="Save" HorizontalAlignment="Left" Margin="112,320,0,0" VerticalAlignment="Top" Click="ButSave_Click"/>
     </Grid>
 </Window>

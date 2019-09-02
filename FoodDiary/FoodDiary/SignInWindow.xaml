@@ -11,8 +11,8 @@
         <TextBox Name="tbLogin" HorizontalAlignment="Left" Height="34" Margin="50,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="115"/>
         <Label Content="Password" HorizontalAlignment="Center" Height="30" Margin="0,77,0,0" VerticalAlignment="Top" Width="68" />
         <TextBox x:Name="tbPassword" HorizontalAlignment="Left" Height="34" Margin="50,107,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="115"/>
-        <Button Name="butSignIn" Content="SignIn" HorizontalAlignment="Left" Margin="64,146,0,0" VerticalAlignment="Top"/>
-        <Button FontSize="10" Name="butSingUp" Content="SignUp" HorizontalAlignment="Left" Margin="120,191,0,0" VerticalAlignment="Top"/>
+        <Button Name="butSignIn" Content="SignIn" HorizontalAlignment="Left" Margin="64,146,0,0" VerticalAlignment="Top" Click="ButSignIn_Click"/>
+        <Button FontSize="10" Name="butSingUp" Content="SignUp" HorizontalAlignment="Left" Margin="120,191,0,0" VerticalAlignment="Top" Click="ButSingUp_Click"/>
         <Label FontWeight="ExtraBold" FontSize="10" Content="Don't have an acc:" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top"/>
         <TextBlock Name="tblError" Foreground="Red" FontSize="8" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
     </Grid>
