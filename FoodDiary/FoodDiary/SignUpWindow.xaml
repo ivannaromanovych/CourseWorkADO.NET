@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="SignUpWindow" Height="392" Width="302" FontFamily="Segoe Print" FontSize="12">
     <Grid>
-        <Label FontSize="14" FontWeight="SemiBold" Content="Please Sign Up" HorizontalAlignment="Center" Height="34" Margin="0,0,0,0" VerticalAlignment="Top" Width="115"/>
+        <Label Name="lbTitle" FontSize="14" FontWeight="SemiBold" Content="Please Sign Up" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top"/>
 
         <Label Name="lbFirstName" Content="First Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,39,0,0" />
         <TextBox x:Name="tbFirstName" HorizontalAlignment="Left" Height="30" Margin="139,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
@@ -23,7 +23,7 @@
         <TextBox x:Name="tbWeight" HorizontalAlignment="Left" Height="30" Margin="139,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" ToolTip="Must be positiv number"/>
         <Label Content="kg" HorizontalAlignment="Left" Height="35" Margin="257,145,0,0" VerticalAlignment="Top" Width="28"/>
 
-        <Label Name="Height" Content="Height" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,170,0,0"/>
+        <Label Name="lbHeight" Content="Height" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,170,0,0"/>
         <TextBox x:Name="tbHeight" HorizontalAlignment="Left" Height="30" Margin="139,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" ToolTip="Must be positiv number"/>
         <Label Content="cm" HorizontalAlignment="Left" Height="35" Margin="257,180,0,0" VerticalAlignment="Top" Width="30"/>
 

@@ -1,6 +1,7 @@
 ﻿using FoodDiary.BLL.Abstract;
 using FoodDiary.BLL.Models;
 using FoodDiary.DAL.Concrate;
+using FoodDiary.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,6 +47,7 @@ namespace FoodDiary.BLL.Concrate
                         Id = a.Id,
                         ProductId = a.ProductId,
                         Weight = a.Weight,
+
                         AtedCalories = a.AtedCalories,
                         AtedProteins = a.AtedProteins,
                         AtedFats = a.AtedFats,
@@ -53,6 +55,44 @@ namespace FoodDiary.BLL.Concrate
                     }).ToList()
                 }).ToList(),
             }).ToList();
+        }
+        public void AddOrUpdate(UserDTO user)
+        {
+            _repository.AddOrUpdate(new User()
+            {
+                Id = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Gender = user.Gender,
+                Age = user.Age,
+                Height = user.Height,
+                Weight = user.Weight,
+                Login = user.Login,
+                Password = user.Password,
+                RecommentedCountOfCalories = user.RecommentedCountOfCalories,
+                RecommentedCountOfProteins = user.RecommentedCountOfProteins,
+                RecommentedCountOfFats = user.RecommentedCountOfFats,
+                RecommentedCountOfCarbohydrates = user.RecommentedCountOfCarbohydrates,
+                AtedCalories = user.AtedCalories,
+                AtedProteins = user.AtedProteins,
+                AtedFats = user.AtedFats,
+                AtedCarbohydrates = user.AtedCarbohydrates,
+                Days = user.Days.Select(d => new Day()
+                {
+                    UserId = d.UserId,
+                    Date = d.Date,
+                    AtedProducts = d.AtedProducts.Select(a => new AtedProduct()
+                    {
+                        Id = a.Id,
+                        ProductId = a.ProductId,
+                        Weight = a.Weight,
+                        AtedCalories = a.AtedCalories,
+                        AtedProteins = a.AtedProteins,
+                        AtedFats = a.AtedFats,
+                        AtedCarbohydrates = a.AtedCarbohydrates
+                    }).ToList(),
+                }).ToList()
+            });
         }
     }
 }
