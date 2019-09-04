@@ -11,35 +11,35 @@
         </Grid.ColumnDefinitions>
 
 
-        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="119,-20,0,0" VerticalAlignment="Top" Width="29" RenderTransformOrigin="0.5,0.5">
+        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="138,-22,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.5,0.5">
             <Separator.RenderTransform>
                 <TransformGroup>
                     <RotateTransform Angle="-90"/>
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="245,-19,0,0" VerticalAlignment="Top" Width="29" RenderTransformOrigin="0.5,0.5">
+        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="264,-22,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.5,0.5">
             <Separator.RenderTransform>
                 <TransformGroup>
                     <RotateTransform Angle="-90"/>
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="370,-19,0,0" VerticalAlignment="Top" Width="29" RenderTransformOrigin="0.5,0.5">
+        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="390,-22,0,0" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
             <Separator.RenderTransform>
                 <TransformGroup>
                     <RotateTransform Angle="-90"/>
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="455,-19,0,0" VerticalAlignment="Top" Width="29" RenderTransformOrigin="0.5,0.5">
+        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="474,-22,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.5,0.5">
             <Separator.RenderTransform>
                 <TransformGroup>
                     <RotateTransform Angle="-90"/>
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="603,-19,0,0" VerticalAlignment="Top" Width="29" RenderTransformOrigin="0.5,0.5">
+        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="673,-22,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.5,0.5">
             <Separator.RenderTransform>
                 <TransformGroup>
                     <RotateTransform Angle="-90"/>
@@ -49,59 +49,59 @@
 
         <Calendar HorizontalAlignment="Left" Height="384" Margin="10,36,0,0" VerticalAlignment="Top" Width="281"/>
 
-        <TextBlock HorizontalAlignment="Left" Height="22" Margin="538,37,0,0" VerticalAlignment="Top" Width="232" Text="Adjusted number of calories per day:"/>
-        <TextBlock Name="tblCalories" HorizontalAlignment="Left" Height="24" Margin="770,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62"/>
+        <TextBlock FontWeight="Heavy" HorizontalAlignment="Left" Height="22" Margin="538,37,0,0" VerticalAlignment="Top" Width="232" Text="Adjusted number of calories per day:"/>
+        <TextBlock FontWeight="Heavy" Name="tblCalories" HorizontalAlignment="Left" Height="31" Margin="770,37,0,0" VerticalAlignment="Top" Width="62"/>
 
-        <Label  Content="Ated products&#xD;&#xA;" HorizontalAlignment="Left" Height="32" Margin="296,37,0,0" VerticalAlignment="Top" Width="100"/>
-        <ListBox x:Name="lbBreakfast" HorizontalAlignment="Left" Height="196" Margin="296,64,0,0" VerticalAlignment="Top" Width="234"/>
+        <Label  Content="Ated products" HorizontalAlignment="Left" Height="32" Margin="296,37,0,0" VerticalAlignment="Top" Width="100"/>
+        <ListBox x:Name="lbAtedProducts" HorizontalAlignment="Left" Height="196" Margin="296,64,0,0" VerticalAlignment="Top" Width="234"/>
 
-        <RadioButton x:Name="rbGenderMale" Content="Male" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5,0,0"/>
-        <RadioButton x:Name="rbGenderFemale" Content="Female" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="56,6,0,0"/>
+        <Label Content="Gender: " HorizontalAlignment="Left" Height="26" Margin="5,0,0,0" VerticalAlignment="Top" Width="59"/>
+        <Label x:Name="lbGender" Content="Female" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,0,0,0"/>
 
-        <Label Content="Weight" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="137,0,0,0"/>
-        <TextBox x:Name="tboxWeight" HorizontalAlignment="Left" Height="30" Margin="196,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"/>
-        <Label Content="kg" HorizontalAlignment="Left" Height="35" Margin="231,1,0,0" VerticalAlignment="Top" Width="28"/>
+        <Label Content="Weight" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="156,-2,0,0"/>
+        <Label x:Name="lbWeight" HorizontalAlignment="Left" Height="30" Margin="216,-2,0,0" VerticalAlignment="Top" Width="38"/>
+        <Label Content="kg" HorizontalAlignment="Left" Height="36" Margin="250,-2,0,0" VerticalAlignment="Top" Width="28"/>
 
-        <Label Content="Height" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="261,0,0,0"/>
-        <TextBox x:Name="tboxHeight" HorizontalAlignment="Left" Height="30" Margin="317,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"/>
-        <Label Content="cm" HorizontalAlignment="Left" Height="35" Margin="352,1,0,0" VerticalAlignment="Top" Width="30"/>
+        <Label Content="Height" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="280,-2,0,0"/>
+        <Label x:Name="lbHeight" HorizontalAlignment="Left" Height="30" Margin="336,-2,0,0"  VerticalAlignment="Top" Width="38"/>
+        <Label Content="cm" HorizontalAlignment="Left" Height="36" Margin="372,-2,0,0" VerticalAlignment="Top" Width="30"/>
 
-        <Label Content="Age" HorizontalAlignment="Left" Height="35" Margin="387,0,0,0" VerticalAlignment="Top" Width="39"/>
-        <TextBox x:Name="tboxAge" HorizontalAlignment="Left" Height="30" Margin="426,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"/>
+        <Label Content="Age" HorizontalAlignment="Left" Height="34" Margin="406,-2,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label x:Name="lbAge" HorizontalAlignment="Left" Height="30" Margin="446,-2,0,0" VerticalAlignment="Top" Width="38"/>
 
-        <Label Content="Name" Margin="469,2,318,547"/>
-        <TextBox x:Name="tboxName" HorizontalAlignment="Left" Height="30" Margin="529,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
-        <Button Name="butEdit" Content="Edit" HorizontalAlignment="Left" Height="28" Margin="726,5,0,0" VerticalAlignment="Top" Width="106"/>
+        <Label Content="Name" Margin="488,0,298,550"/>
+        <Label x:Name="lbName" HorizontalAlignment="Left" Height="30" Margin="548,-2,0,0" VerticalAlignment="Top" Width="141"/>
+        <Button Name="butEdit" Content="Edit" HorizontalAlignment="Left" Height="28" Margin="694,5,0,0" VerticalAlignment="Top" Width="138" Click="ButEdit_Click"/>
 
-        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="119,-20,0,0" VerticalAlignment="Top" Width="29" RenderTransformOrigin="0.5,0.5">
+        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="138,-22,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.5,0.5">
             <Separator.RenderTransform>
                 <TransformGroup>
                     <RotateTransform Angle="-90"/>
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="245,-19,0,0" VerticalAlignment="Top" Width="29" RenderTransformOrigin="0.5,0.5">
+        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="264,-22,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.5,0.5">
             <Separator.RenderTransform>
                 <TransformGroup>
                     <RotateTransform Angle="-90"/>
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="370,-19,0,0" VerticalAlignment="Top" Width="29" RenderTransformOrigin="0.5,0.5">
+        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="390,-22,0,0" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.5">
             <Separator.RenderTransform>
                 <TransformGroup>
                     <RotateTransform Angle="-90"/>
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="455,-19,0,0" VerticalAlignment="Top" Width="29" RenderTransformOrigin="0.5,0.5">
+        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="474,-22,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.5,0.5">
             <Separator.RenderTransform>
                 <TransformGroup>
                     <RotateTransform Angle="-90"/>
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="603,-19,0,0" VerticalAlignment="Top" Width="29" RenderTransformOrigin="0.5,0.5">
+        <Separator Panel.ZIndex="-1" HorizontalAlignment="Left" Height="72" Margin="673,-22,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.5,0.5">
             <Separator.RenderTransform>
                 <TransformGroup>
                     <RotateTransform Angle="-90"/>
@@ -111,32 +111,32 @@
 
         <Calendar Name="Calendar1" HorizontalAlignment="Left" Height="384" Margin="10,36,0,0" VerticalAlignment="Top" Width="281"/>
 
-        <TextBlock HorizontalAlignment="Left" Height="22" Margin="538,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Text="Adjusted number of calories per day:"/>
-
         <Button x:Name="butAddNewIngestion" Content="Add" HorizontalAlignment="Left" Height="30" Margin="767,79,0,0" VerticalAlignment="Top" Width="65"/>
         <TextBlock FontSize="14" Text="Add new ingestion" HorizontalAlignment="Left" Height="36" Margin="535,73,0,0" VerticalAlignment="Top" Width="186"/>
         <ComboBox x:Name="cbProducts" HorizontalAlignment="Left" Height="35" Margin="533,121,0,0" VerticalAlignment="Top" Width="188"/>
         <TextBox x:Name="tboxProductWeight" HorizontalAlignment="Left" Height="32" Margin="726,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="59"/>
         <TextBlock HorizontalAlignment="Left" Height="32" Margin="790,129,0,0" TextWrapping="Wrap" Text="gram" VerticalAlignment="Top" Width="42"/>
-        <TextBlock HorizontalAlignment="Left" Height="35" Margin="538,173,0,0" TextWrapping="Wrap" Text="Time" VerticalAlignment="Top" Width="42"/>
-        <ComboBox x:Name="cbIngestionTime" HorizontalAlignment="Left" Height="35" Margin="596,161,0,0" VerticalAlignment="Top" Width="236">
-            <ComboBoxItem>Breakfast</ComboBoxItem>
-            <ComboBoxItem>Dinner</ComboBoxItem>
-            <ComboBoxItem>Supper</ComboBoxItem>
-        </ComboBox>
-
-        <TextBlock FontSize="14" Text="Add new product" HorizontalAlignment="Left" Height="36" Margin="535,213,0,0" VerticalAlignment="Top" Width="186"/>
-        <TextBlock HorizontalAlignment="Left" Height="32" Margin="538,261,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="79"/>
-        <TextBox x:Name="tboxNewProductName" HorizontalAlignment="Left" Height="32" Margin="622,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"/>
-        <TextBlock HorizontalAlignment="Left" Height="32" Margin="541,298,0,0" TextWrapping="Wrap" Text="Category" VerticalAlignment="Top" Width="79"/>
-        <ComboBox x:Name="cbNewProductCategory" HorizontalAlignment="Left" Height="35" Margin="622,298,0,0" VerticalAlignment="Top" Width="210"/>
-        <TextBlock HorizontalAlignment="Left" Height="32" Margin="538,338,0,0" TextWrapping="Wrap" Text="Cal/100 gr" VerticalAlignment="Top" Width="79"/>
-        <TextBox x:Name="tboxNewProductCalories" HorizontalAlignment="Left" Height="32" Margin="622,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"/>
-        <Button x:Name="butAddNewProduct" Content="Add" HorizontalAlignment="Left" Height="36" Margin="767,213,0,0" VerticalAlignment="Top" Width="65"/>
-        <Button x:Name="butReport" Content="Report" HorizontalAlignment="Left" Height="36" Margin="541,503,0,0" VerticalAlignment="Top" Width="133"/>
-        <Button x:Name="butSaveAll" Content="Save All" HorizontalAlignment="Left" Height="36" Margin="694,503,0,0" VerticalAlignment="Top" Width="138"/>
         <TextBlock x:Name="tblTakedCalories" HorizontalAlignment="Left" Height="18" Margin="296,392,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="59"/>
         <TextBlock HorizontalAlignment="Left" Height="18" Margin="360,392,0,0" TextWrapping="Wrap" Text="cal of" VerticalAlignment="Top" Width="59"/>
-        <TextBlock Text="{Binding ElementName=tblCalories, Path=Text, Mode=OneWay}" HorizontalAlignment="Left" Height="18" Margin="440,392,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="59"/>
+        <TextBlock Text="{Binding ElementName=lbCalories, Path=Content, Mode=OneWay}" HorizontalAlignment="Left" Height="18" Margin="406,392,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="59"/>
+        <Label Content="Ated proteins:" HorizontalAlignment="Left" Height="26" Margin="533,161,0,0" VerticalAlignment="Top" Width="105"/>
+
+        <Label Name="lbAtedProteins" HorizontalAlignment="Left" Height="26" Margin="665,161,0,0" VerticalAlignment="Top" Width="45"/>
+        <Label Content="of" HorizontalAlignment="Left" Height="27" Margin="726,161,0,0" VerticalAlignment="Top" Width="26"/>
+        <Label x:Name="lbRecommendedProteins" HorizontalAlignment="Left" Height="26" Margin="757,161,0,0" VerticalAlignment="Top" Width="45"/>
+
+        <Label Content="Ated fats:" HorizontalAlignment="Left" Height="26" Margin="533,192,0,0" VerticalAlignment="Top" Width="94"/>
+        <Label x:Name="lbAtedFats" HorizontalAlignment="Left" Height="26" Margin="665,192,0,0" VerticalAlignment="Top" Width="45"/>
+        <Label Content="of" HorizontalAlignment="Left" Height="27" Margin="726,192,0,0" VerticalAlignment="Top" Width="26"/>
+        <Label x:Name="lbRecommendedFats" HorizontalAlignment="Left" Height="26" Margin="757,192,0,0" VerticalAlignment="Top" Width="45"/>
+
+        <Label Content="Ated carbohydrates:" HorizontalAlignment="Left" Height="31" Margin="533,223,0,0" VerticalAlignment="Top" Width="137"/>
+        <Label x:Name="lbAtedCarbs" HorizontalAlignment="Left" Height="26" Margin="665,223,0,0" VerticalAlignment="Top" Width="45"/>
+        <Label Content="of" HorizontalAlignment="Left" Height="27" Margin="726,223,0,0" VerticalAlignment="Top" Width="26"/>
+        <Label x:Name="lbRecommendedCarbs" HorizontalAlignment="Left" Height="26" Margin="757,223,0,0" VerticalAlignment="Top" Width="45"/>
+        <Label FontWeight="Heavy" Content="Ated carbohydrates:" HorizontalAlignment="Left" Height="36" Margin="533,254,0,0" VerticalAlignment="Top" Width="137"/>
+        <Label FontWeight="Heavy" x:Name="lbAtedCarbs_Copy" HorizontalAlignment="Left" Height="26" Margin="665,254,0,0" VerticalAlignment="Top" Width="45"/>
+        <Label FontWeight="Heavy" Content="of" HorizontalAlignment="Left" Height="27" Margin="726,254,0,0" VerticalAlignment="Top" Width="26"/>
+        <Label FontWeight="Heavy" x:Name="lbRecommendedCarbs_Copy" HorizontalAlignment="Left" Height="26" Margin="757,254,0,0" VerticalAlignment="Top" Width="45"/>
     </Grid>
 </Window>

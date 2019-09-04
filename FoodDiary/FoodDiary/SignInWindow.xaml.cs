@@ -37,10 +37,9 @@ namespace FoodDiary
                     user=_userService.GetAll().First(t => t.Login == tbLogin.Text);
                 if (user.Password == tbPassword.Text)
                 {
-                    DiaryWindow diaryWindow = new DiaryWindow(user);
+                    DiaryWindow diary = new DiaryWindow(user);
                     this.Close();
-                    diaryWindow.ShowDialog();
-                    
+                    diary.ShowDialog();
                 }
                 else
                     tblError.Text = "You filled wrong Login or Password";

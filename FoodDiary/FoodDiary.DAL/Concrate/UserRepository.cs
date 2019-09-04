@@ -16,6 +16,15 @@ namespace FoodDiary.DAL.Concrate
         {
             return _context.Users.ToList();
         }
+        public User Find(int id)
+        {
+            return _context.Users.FirstOrDefault(t => t.Id == id);
+        }
+        public void AddIngestion(int id, DateTime date, AtedProduct product)
+        {
+            _context.Users.ElementAt(id).Days.First(t => t.Date.Day == date.Day && t.Date.Month == date.Month && t.Date.Year == date.Year).AtedProducts.Add(product);
+            _context.SaveChanges();
+        }
         public void AddOrUpdate(User user)
         {
             _context.Users.AddOrUpdate(t => t.Id,
@@ -34,12 +43,8 @@ namespace FoodDiary.DAL.Concrate
                     RecommentedCountOfProteins = user.RecommentedCountOfProteins,
                     RecommentedCountOfFats = user.RecommentedCountOfFats,
                     RecommentedCountOfCarbohydrates = user.RecommentedCountOfCarbohydrates,
-                    AtedCalories = user.AtedCalories,
-                    AtedProteins = user.AtedProteins,
-                    AtedFats = user.AtedFats,
-                    AtedCarbohydrates = user.AtedCarbohydrates,
-                    Days = user.Days
                 });
+            _context.SaveChanges();
         }
     }
 }

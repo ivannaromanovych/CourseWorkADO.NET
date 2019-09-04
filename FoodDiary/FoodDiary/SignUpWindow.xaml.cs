@@ -30,9 +30,8 @@ namespace FoodDiary
         public SignUpWindow()
         {
             InitializeComponent();
-            _Id = _userService.GetAll().ToList()[_userService.GetAll().ToList().Count - 1].Id + 1;
         }
-        UserDTO user = new UserDTO();
+        public UserDTO user = new UserDTO();
 
         public SignUpWindow(UserDTO user)
         {
@@ -112,11 +111,10 @@ namespace FoodDiary
 
             if (!String.IsNullOrEmpty(tbLogin.Text) && tbLogin.Text.Length >= 5)
             {
-                if (_userService.GetAll().Count(t => t.Login == tbLogin.Text) == 0 || _Id != 0)
+                if (_userService.GetAll().Count(t => t.Login == tbLogin.Text&&t.Id!=_Id) == 0)
                 {
                     user.Login = tbLogin.Text;
                     lbLogin.Foreground = okBrush;
-
                 }
                 else
                     lbLogin.Foreground = errorBrush;
@@ -131,7 +129,6 @@ namespace FoodDiary
             }
             else
                 lbPassword.Foreground = errorBrush;
-            EFContext _context = new EFContext();
             if (lbFirstName.Foreground == errorBrush ||
                 lbLastName.Foreground == errorBrush ||
                 lbGender.Foreground == errorBrush ||
@@ -154,7 +151,15 @@ namespace FoodDiary
                 user.RecommentedCountOfProteins = a / 4;
                 user.RecommentedCountOfFats = a / 9;
                 user.RecommentedCountOfCarbohydrates = (a * 4) / 4;
+                user.Id = _Id;
                 _userService.AddOrUpdate(user);
+                if (_Id != 0)
+                {
+                    DiaryWindow diary = new DiaryWindow(user);
+                    this.Close();
+                    diary.ShowDialog();
+                }
+                this.Close();
             }
         }
     }
