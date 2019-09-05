@@ -1,4 +1,6 @@
-﻿using FoodDiary.BLL.Models;
+﻿using FoodDiary.BLL.Concrate;
+using FoodDiary.BLL.Models;
+using FoodDiary.DAL.Concrate;
 using FoodDiary.DAL.Entities;
 using System;
 using System.Collections.Generic;
@@ -22,10 +24,21 @@ namespace FoodDiary
     public partial class DiaryWindow : Window
     {
         private UserDTO user;
+        private static ProductRepository _productRepository = new ProductRepository();
+        private ProductService _productService = new ProductService(_productRepository);
+        private static UserRepository _userRepository = new UserRepository();
+        private UserService _userService = new UserService(_userRepository);
         public DiaryWindow(UserDTO user)
         {
             InitializeComponent();
             this.user = user;
+            Calendar1.SelectionMode = CalendarSelectionMode.SingleDate;
+            cbProducts.ItemsSource = _productService.GetAll().ToList();
+            Calendar1.SelectedDate = DateTime.Now;
+            FillWindow();
+        }
+        private void FillWindow()
+        {
             if (user.Gender == true)
                 lbGender.Content = "Male";
             else
@@ -35,10 +48,30 @@ namespace FoodDiary
             lbHeight.Content = user.Height;
             lbName.Content = user.FirstName + " " + user.LastName;
             tblCalories.Text = user.RecommentedCountOfCalories.ToString();
-            lb
 
+            lbRecommendedCalories.Content = user.RecommentedCountOfCalories.ToString();
+            lbRecommendedCarbs.Content = user.RecommentedCountOfCarbohydrates.ToString();
+            lbRecommendedFats.Content = user.RecommentedCountOfFats.ToString();
+            lbRecommendedProteins.Content = user.RecommentedCountOfProteins.ToString();
+
+            DayDTO day = user.FindDay(Convert.ToDateTime(Calendar1.SelectedDate));
+            if (day != null)
+            {
+                day.FillDay();
+                lbAtedCalories.Content = day.AtedCalories.ToString();
+                lbAtedCarbs.Content = day.AtedCarbohydrates.ToString();
+                lbAtedFats.Content = day.AtedFats.ToString();
+                lbAtedProteins.Content = day.AtedProteins.ToString();
+                lbAtedProducts.ItemsSource = day.AtedProducts.ToList();
+            }
+            else
+            {
+                lbAtedCalories.Content = 0;
+                lbAtedCarbs.Content = 0;
+                lbAtedFats.Content = 0;
+                lbAtedProteins.Content = 0;
+            }
         }
-
         private void ButEdit_Click(object sender, RoutedEventArgs e)
         {
             SignUpWindow sign = new SignUpWindow(user);
@@ -56,6 +89,47 @@ namespace FoodDiary
             sign.lbTitle.Content = "Edit user";
             this.Close();
             sign.ShowDialog();
+        }
+
+        private void ButAddNewIngestion_Click(object sender, RoutedEventArgs e)
+        {
+            if (cbProducts.SelectedIndex == -1)
+                lbError.Content="You didn't choose product";
+            else if (String.IsNullOrWhiteSpace(tboxProductWeight.Text))
+                lbError.Content = "You didn't enter product weight";
+            else
+            {
+                float res;
+                if (!float.TryParse(tboxProductWeight.Text, out res) || float.Parse(tboxProductWeight.Text) < 0 || float.Parse(tboxProductWeight.Text) > 1000)
+                    lbError.Content = "You didn't fill product weight right";
+                else
+                {
+                    AtedProductDTO product = new AtedProductDTO();
+                    product.FillProduct((ProductDTO)cbProducts.SelectedItem, float.Parse(tboxProductWeight.Text));
+                    _userService.AddIngestion(user.Id, Convert.ToDateTime(Calendar1.SelectedDate), product);
+                    FillWindow();
+                }
+            }
+        }
+
+        private void Calendar1_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Calendar1.SelectedDate != null)
+            {
+                DayDTO day = user.Days.FirstOrDefault(t => t.Date.CompareTo(Convert.ToDateTime(Calendar1.SelectedDate).Date) == 0);
+                if (day != null)
+                {
+                    FillWindow();
+                }
+                else
+                {
+                    lbAtedCalories.Content = 0;
+                    lbAtedCarbs.Content = 0;
+                    lbAtedFats.Content = 0;
+                    lbAtedProteins.Content = 0;
+                    lbAtedProducts.ItemsSource = null;
+                }
+            }
 
         }
     }

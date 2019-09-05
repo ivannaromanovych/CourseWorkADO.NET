@@ -23,10 +23,10 @@ namespace FoodDiary.BLL.Models
         public float RecommentedCountOfProteins { get; set; }
         public float RecommentedCountOfFats { get; set; }
         public float RecommentedCountOfCarbohydrates { get; set; }
-        public float AtedProteins { get; set; }
-        public float AtedFats { get; set; }
-        public float AtedCarbohydrates { get; set; }
-        public float AtedCalories { get; set; }
         public List<DayDTO> Days { get; set; }
+        public DayDTO FindDay(DateTime date)
+        {
+            return Days.FirstOrDefault(t => t.Date.Day == date.Day && t.Date.Month == date.Month && t.Date.Year == date.Year);
+        }
     }
 }

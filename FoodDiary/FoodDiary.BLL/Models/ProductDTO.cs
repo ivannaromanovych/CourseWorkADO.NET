@@ -16,5 +16,9 @@ namespace FoodDiary.BLL.Models
         public float FatsIn100g { get; set; }
         public float CarbohydratesIn100g { get; set; }
         public float CaloriesIn100g { get; set; }
+        public override string ToString()
+        {
+            return Name + " " + CaloriesIn100g.ToString() + " cal, " + ProteinsIn100g.ToString() + "/" + FatsIn100g.ToString() + "/" + CarbohydratesIn100g.ToString();
+        }
     }
 }

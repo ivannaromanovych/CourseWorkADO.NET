@@ -38,14 +38,6 @@ namespace FoodDiary.DAL.Entities
         public float RecommentedCountOfFats { get; set; }
         [Required]
         public float RecommentedCountOfCarbohydrates { get; set; }
-        [Required]
-        public float AtedProteins { get; set; }
-        [Required]
-        public float AtedFats { get; set; }
-        [Required]
-        public float AtedCarbohydrates { get; set; }
-        [Required]
-        public float AtedCalories { get; set; }
         public virtual ICollection<Day> Days { get; set; }
     }
 }

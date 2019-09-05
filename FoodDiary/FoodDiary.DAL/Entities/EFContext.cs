@@ -16,5 +16,7 @@ namespace FoodDiary.DAL.Entities
 
         public DbSet<User> Users { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<AtedProduct> AtedProducts { get; set; }
+        public DbSet<Day> Days { get; set; }
     }
 }

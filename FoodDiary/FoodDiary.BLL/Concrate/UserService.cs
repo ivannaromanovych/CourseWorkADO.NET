@@ -35,10 +35,6 @@ namespace FoodDiary.BLL.Concrate
                 RecommentedCountOfProteins = user.RecommentedCountOfProteins,
                 RecommentedCountOfFats = user.RecommentedCountOfFats,
                 RecommentedCountOfCarbohydrates = user.RecommentedCountOfCarbohydrates,
-                AtedCalories = user.AtedCalories,
-                AtedProteins = user.AtedProteins,
-                AtedFats = user.AtedFats,
-                AtedCarbohydrates = user.AtedCarbohydrates,
                 Days = user.Days.Select(d => new DayDTO()
                 {
                     UserId = d.UserId,
@@ -57,6 +53,21 @@ namespace FoodDiary.BLL.Concrate
                 }).ToList()
             };
         }
+        public void AddIngestion(int id, DateTime date, AtedProductDTO product)
+        {
+            AtedProduct atedProduct = new AtedProduct()
+            {
+                AtedCalories = product.AtedCalories,
+                AtedCarbohydrates = product.AtedCarbohydrates,
+                AtedFats = product.AtedFats,
+                AtedProteins = product.AtedProteins,
+                Id = product.Id,
+                Weight = product.Weight,
+                ProductId = product.ProductId,
+                DayId = id
+            };
+            _repository.AddIngestion(id, date, atedProduct);
+        }
         public IEnumerable<UserDTO> GetAll()
         {
             return _repository.Get().Select(t => new UserDTO()
@@ -74,10 +85,6 @@ namespace FoodDiary.BLL.Concrate
                 RecommentedCountOfProteins = t.RecommentedCountOfProteins,
                 RecommentedCountOfFats = t.RecommentedCountOfFats,
                 RecommentedCountOfCarbohydrates = t.RecommentedCountOfCarbohydrates,
-                AtedCalories = t.AtedCalories,
-                AtedProteins = t.AtedProteins,
-                AtedFats = t.AtedFats,
-                AtedCarbohydrates = t.AtedCarbohydrates,
                 Days = t.Days.Select(d => new DayDTO()
                 {
                     UserId = d.UserId,
@@ -92,6 +99,7 @@ namespace FoodDiary.BLL.Concrate
                         AtedProteins = a.AtedProteins,
                         AtedFats = a.AtedFats,
                         AtedCarbohydrates = a.AtedCarbohydrates
+
                     }).ToList()
                 }).ToList(),
             }).ToList();

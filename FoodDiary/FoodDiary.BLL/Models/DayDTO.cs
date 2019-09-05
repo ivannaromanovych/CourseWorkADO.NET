@@ -12,12 +12,20 @@ namespace FoodDiary.BLL.Models
         public int UserId { get; set; }
         public DateTime Date { get; set; }
         public List<AtedProductDTO> AtedProducts { get; set; }
-        public float AtedCalories { get; }
+        public float AtedCalories { get; set; }
         public float AtedProteins { get; set; }
-        public DayDTO()
+        public float AtedFats { get; set; }
+        public float AtedCarbohydrates { get; set; }
+        public void FillDay()
         {
-            foreach (AtedProductDTO item in AtedProducts)
-                AtedCalories += item.AtedCalories;
+            if (AtedProducts != null)
+                for (int i = 0; i < AtedProducts.Count; i++)
+                {
+                    AtedCalories += AtedProducts[i].AtedCalories;
+                    AtedProteins += AtedProducts[i].AtedProteins;
+                    AtedFats += AtedProducts[i].AtedFats;
+                    AtedCarbohydrates += AtedProducts[i].AtedCarbohydrates;
+                }
         }
     }
 }

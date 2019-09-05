@@ -11,10 +11,14 @@ namespace FoodDiary.DAL.Entities
     [Table("tblDays")]
     public class Day
     {
-        [Key, Column(Order = 0), ForeignKey("UserOf")]
-        public int UserId { get; set; }
-        [Key, Column(Order = 1)]
+        [Key]
+        public int Id { get; set; }
+        [Index(IsUnique =true)]
         public DateTime Date { get; set; }
+
+        [ForeignKey("UserOf")]
+        public int UserId { get; set; }
+
         public virtual User UserOf { get; set; }
         public virtual ICollection<AtedProduct> AtedProducts { get; set; }
     }

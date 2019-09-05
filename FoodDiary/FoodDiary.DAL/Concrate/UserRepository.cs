@@ -22,7 +22,31 @@ namespace FoodDiary.DAL.Concrate
         }
         public void AddIngestion(int id, DateTime date, AtedProduct product)
         {
-            _context.Users.ElementAt(id).Days.First(t => t.Date.Day == date.Day && t.Date.Month == date.Month && t.Date.Year == date.Year).AtedProducts.Add(product);
+            User user = Find(id);
+            if (user.Days.Count(t => t.Date.Day == date.Day && t.Date.Month == date.Month && t.Date.Year == date.Year) == 0)
+            {
+                _context.Days.AddOrUpdate(t => t.UserId,
+                    new Day()
+                    {
+                        UserId = user.Id,
+                        UserOf = user,
+                        Date = date.Date
+                        
+                    });
+            }
+            _context.SaveChanges();
+            _context.AtedProducts.AddOrUpdate(t => t.Id,
+                new AtedProduct()
+                {
+                    AtedCarbohydrates = product.AtedCarbohydrates,
+                    AtedCalories = product.AtedCalories,
+                    AtedFats = product.AtedFats,
+                    AtedProteins = product.AtedProteins,
+                    Id = product.Id,
+                    DayId = product.DayId,
+                    ProductId = product.ProductId,
+                    Weight = product.Weight,
+                });
             _context.SaveChanges();
         }
         public void AddOrUpdate(User user)

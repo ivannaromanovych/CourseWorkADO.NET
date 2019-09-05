@@ -63,10 +63,6 @@ namespace FoodDiary.DAL.Migrations
                         RecommentedCountOfProteins = _Proteins,
                         RecommentedCountOfFats = _Fats,
                         RecommentedCountOfCarbohydrates = _Carbohydrates,
-                        AtedCalories = 0,
-                        AtedProteins = 0,
-                        AtedFats = 0,
-                        AtedCarbohydrates = 0
                     });
             }
             context.Products.AddOrUpdate(t => t.Id,

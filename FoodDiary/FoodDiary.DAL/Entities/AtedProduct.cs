@@ -13,10 +13,8 @@ namespace FoodDiary.DAL.Entities
     {
         [Key]
         public int Id { get; set; }
-        [Required, ForeignKey("DayOf"), Column(Order = 1)]
+        [Required, ForeignKey("DayOf")]
         public int DayId { get; set; }
-        [Required, ForeignKey("DayOf"), Column(Order = 2)]
-        public DateTime DayDate { get; set; }
         [Required, ForeignKey("ProductOf")]
         public int ProductId { get; set; }
         [Required]
