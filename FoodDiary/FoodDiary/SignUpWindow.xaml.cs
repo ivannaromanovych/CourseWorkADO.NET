@@ -27,6 +27,7 @@ namespace FoodDiary
         private int _Id = 0;
         private static UserRepository _userRepository = new UserRepository();
         private UserService _userService = new UserService(_userRepository);
+
         public SignUpWindow()
         {
             InitializeComponent();

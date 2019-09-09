@@ -31,7 +31,7 @@ namespace FoodDiary
         public DiaryWindow(UserDTO user)
         {
             InitializeComponent();
-            this.user = user;
+            this.user = _userService.FindById(user.Id);
             Calendar1.SelectionMode = CalendarSelectionMode.SingleDate;
             cbProducts.ItemsSource = _productService.GetAll().ToList();
             Calendar1.SelectedDate = DateTime.Now;
@@ -107,6 +107,7 @@ namespace FoodDiary
                     AtedProductDTO product = new AtedProductDTO();
                     product.FillProduct((ProductDTO)cbProducts.SelectedItem, float.Parse(tboxProductWeight.Text));
                     _userService.AddIngestion(user.Id, Convert.ToDateTime(Calendar1.SelectedDate), product);
+                    user = _userService.FindById(user.Id);
                     FillWindow();
                 }
             }
@@ -114,9 +115,9 @@ namespace FoodDiary
 
         private void Calendar1_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (Calendar1.SelectedDate != null)
+            if (Calendar1.SelectedDate.HasValue == true)
             {
-                DayDTO day = user.Days.FirstOrDefault(t => t.Date.CompareTo(Convert.ToDateTime(Calendar1.SelectedDate).Date) == 0);
+                DayDTO day = user.Days.FirstOrDefault(t => t.Date.CompareTo(Calendar1.SelectedDate.Value) == 0);
                 if (day != null)
                 {
                     FillWindow();

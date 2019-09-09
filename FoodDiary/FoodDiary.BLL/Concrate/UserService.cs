@@ -64,7 +64,6 @@ namespace FoodDiary.BLL.Concrate
                 Id = product.Id,
                 Weight = product.Weight,
                 ProductId = product.ProductId,
-                DayId = id
             };
             _repository.AddIngestion(id, date, atedProduct);
         }

@@ -23,19 +23,19 @@ namespace FoodDiary.DAL.Concrate
         public void AddIngestion(int id, DateTime date, AtedProduct product)
         {
             User user = Find(id);
-            if (user.Days.Count(t => t.Date.Day == date.Day && t.Date.Month == date.Month && t.Date.Year == date.Year) == 0)
+            var day = user.Days.FirstOrDefault(t => t.Date.Day == date.Day && t.Date.Month == date.Month && t.Date.Year == date.Year);
+            if (day == null)
             {
-                _context.Days.AddOrUpdate(t => t.UserId,
-                    new Day()
-                    {
-                        UserId = user.Id,
-                        UserOf = user,
-                        Date = date.Date
-                        
-                    });
+                day = new Day()
+                {
+                    UserId = user.Id,
+                    Date = date.Date
+
+                };
+                _context.Days.Add(day);
             }
             _context.SaveChanges();
-            _context.AtedProducts.AddOrUpdate(t => t.Id,
+            _context.AtedProducts.Add(
                 new AtedProduct()
                 {
                     AtedCarbohydrates = product.AtedCarbohydrates,
@@ -43,7 +43,7 @@ namespace FoodDiary.DAL.Concrate
                     AtedFats = product.AtedFats,
                     AtedProteins = product.AtedProteins,
                     Id = product.Id,
-                    DayId = product.DayId,
+                    DayId = day.Id,
                     ProductId = product.ProductId,
                     Weight = product.Weight,
                 });
