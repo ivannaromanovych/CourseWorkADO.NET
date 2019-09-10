@@ -13,7 +13,6 @@ namespace FoodDiary.DAL.Entities
     {
         [Key]
         public int Id { get; set; }
-        [Index(IsUnique =true)]
         public DateTime Date { get; set; }
 
         [ForeignKey("UserOf")]
