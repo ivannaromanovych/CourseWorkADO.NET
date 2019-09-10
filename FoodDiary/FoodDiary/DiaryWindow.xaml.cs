@@ -39,6 +39,9 @@ namespace FoodDiary
         }
         private void FillWindow()
         {
+            _userRepository = new UserRepository();
+            _userService = new UserService(_userRepository);
+            this.user = _userService.FindById(user.Id);
             if (user.Gender == true)
                 lbGender.Content = "Male";
             else
@@ -54,6 +57,8 @@ namespace FoodDiary
             lbRecommendedFats.Content = user.RecommentedCountOfFats.ToString();
             lbRecommendedProteins.Content = user.RecommentedCountOfProteins.ToString();
 
+            cbProducts.SelectedIndex = -1;
+            tboxProductWeight.Text = "";
             DayDTO day = user.FindDay(Convert.ToDateTime(Calendar1.SelectedDate));
             if (day != null)
             {
